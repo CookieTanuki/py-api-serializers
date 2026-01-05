@@ -13,7 +13,7 @@ from .serializers import (
     MovieSessionSerializer,
     MovieSessionDetailSerializer,
     MovieSessionListSerializer
-    )
+)
 
 
 class GenreViewSet(ModelViewSet):
@@ -41,6 +41,7 @@ class MovieViewSet(ModelViewSet):
         elif self.action == "retrieve":
             return MovieDetailSerializer
         return MovieSerializer
+
 
 class MovieSessionViewSet(ModelViewSet):
     queryset = MovieSession.objects.select_related("movie", "cinema_hall")

@@ -65,7 +65,6 @@ class MovieSessionDetailSerializer(MovieSessionSerializer):
     cinema_hall = CinemaHallSerializer(read_only=True)
 
 
-
 class MovieSessionListSerializer(serializers.ModelSerializer):
     movie_title = serializers.CharField(source="movie.title", read_only=True)
     cinema_hall_name = serializers.CharField(
